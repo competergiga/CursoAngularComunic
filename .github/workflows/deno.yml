@@ -19,24 +19,22 @@ on:
       
 jobs:
   test:
-    runs-on: ${{ matrix.os }} # runs a test on Ubuntu, Windows and macOS
-
-    strategy:
-      matrix:
-        deno: ["v1.x", "nightly"]
-        os: [macOS-latest, windows-latest, ubuntu-latest]
+    runs-on: [self-hosted, windows, x64]
+   
 
     steps:
-      - name: Setup repo
-        uses: actions/checkout@v2
+          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+          # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
 
-      - name: Setup Deno
-        uses: denolib/setup-deno@c7d7968ad4a59c159a777f79adddad6872ee8d96
-        with:
-          deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
-
-      - name: Cache Dependencies
-        run: deno cache deps.ts
-
-      - name: Run Tests
-        run: deno test -A --unstable
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+      - name: Compila angular
+        run: npm  start
