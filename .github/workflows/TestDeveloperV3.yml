@@ -39,5 +39,5 @@ jobs:
             
       - name: npm install and npm run build
         run: 
-          npm ci
+          npm ci --no-optional
           npm  run build:ci            
