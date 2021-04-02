@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
 
   cambiarNombre(){
     this.nombre = "Pedro";
-    tomanota
+    
+    
+    esto falla mucho
   }
 
 }
