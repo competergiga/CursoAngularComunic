@@ -39,7 +39,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             
-      - name: npm test and npm run build
+      - name: test 
         run: 
-          npm test
-          npm run build         
+          ng test            
+
+      - name: build
+        run: 
+          ng build            
+          
