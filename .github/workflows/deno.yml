@@ -42,4 +42,5 @@ jobs:
       - name: npm install and npm run build
         run: 
           npm ci
+          npm test
           npm  run build:ci
