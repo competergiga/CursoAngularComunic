@@ -25,8 +25,8 @@ jobs:
 
     #You could do this to check if the current push event is for a tag starting with v.
     #https://stackoverflow.com/questions/58475748/github-actions-how-to-check-if-current-push-has-new-tag-is-new-release
-  # if: startsWith(github.ref, 'refs/tags/v') 
-    if: contains(github.ref, 'release')
+    if: startsWith(github.ref, 'refs/tags/v') 
+  # no funciona  if: contains(github.ref, 'release')
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
