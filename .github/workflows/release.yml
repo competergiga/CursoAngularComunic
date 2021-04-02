@@ -46,7 +46,7 @@ jobs:
       
       - name: Test 
         run: 
-          npm testAction           
+          npm run testaction    # es un este que tiene autowatch a false       
 
   # second job
   build:
