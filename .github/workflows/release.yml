@@ -38,11 +38,11 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: test 
+      - name: Test 
         run: 
-          ng test            
+          npm test           
 
-      - name: build
+      - name: Buil
         run: 
           ng build            
           
