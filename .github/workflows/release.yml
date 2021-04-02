@@ -46,15 +46,27 @@ jobs:
       
       - name: Test 
         run: 
-          npm run testaction    # es un este que tiene autowatch a false       
+          echo haciendo canastos...
+     #     npm run testaction    # es un este que tiene autowatch a false       
 
   # second job
   build:
     # The type of runner that the job will run on
     runs-on: [self-hosted, windows, x64]
-    needs: test  #only if job Test has run
+   # needs: test  #only if job Test has run
     steps:
     - name: Build      
       run: 
-        ng build            
+        echo haciendo cestos
+        #ng build        
+        
+  # second job
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, windows, x64]
+    needs: test  #only if job Test has run
+    steps:
+    - name: Deploy      
+      run: 
+        Echo deployando que es gerundio             
           
