@@ -1,0 +1,50 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# This workflow will install Deno and run tests across stable and nightly builds on Windows, Ubuntu and macOS.
+# For more information see: https://github.com/denolib/setup-deno
+
+name: TestDeveloper
+
+on:
+
+  # Triggers the workflow on push or pull request events but only for the master branch
+  
+  # cuando se cree una etiqueta v1* en el branch master.
+  label:    
+      types: [created]         
+      tags:        
+        #- v1              # Push events to v1 tag
+        #- v1.*            # Push events to v1.0, v1.1, and v1.9 tags
+        - v1.*.*
+      branches: [ master ]       
+
+jobs:
+  test:
+    runs-on: [self-hosted, windows, x64]
+   
+
+    steps:
+          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v1
+      
+          # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+          
+      - name: npm install and npm run build
+        run: 
+          npm ci
+          npm  run build:ci
