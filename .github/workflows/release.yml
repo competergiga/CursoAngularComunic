@@ -46,7 +46,7 @@ jobs:
       
       - name: Test 
         run: 
-          npm test           
+          npm testAction           
 
   # second job
   build:
