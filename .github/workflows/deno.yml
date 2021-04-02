@@ -41,6 +41,6 @@ jobs:
           
       - name: npm install and npm run build
         run: 
-          ng test
-          npm ci
+          ng test,
+          npm ci,
           npm  run build:ci
