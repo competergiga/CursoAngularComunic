@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: TestDeveloper
+name: TestDeveloperV3
 
 # Controls when the action will run. 
 on:
@@ -39,5 +39,5 @@ jobs:
             
       - name: npm install and npm run build
         run: 
-          npm ci --no-optional
-          npm  run build:ci            
+          npm test
+          npm  run build          
