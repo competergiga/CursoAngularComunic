@@ -27,10 +27,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Funcionando
-
       - name: Cache node modules
         uses: actions/cache@v2
         with:
@@ -39,6 +35,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             
+      - name: Install dependencies
+        run: npm install
+      
       - name: test 
         run: 
           ng test            
