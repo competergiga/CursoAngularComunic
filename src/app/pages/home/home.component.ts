@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
     
     claro que falla es aposta
     esto falla mucho
+    
+    
+    meto mas mierda
   }
 
 }
