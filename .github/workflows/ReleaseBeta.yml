@@ -1,0 +1,23 @@
+# ejemplo de script que se lanza al hacer un release
+# dependiendo que la etiqueta contenga -beta o no hace el deploy 
+# a staggin o a producción
+
+on:
+  release:
+    types: [created]
+jobs:
+    deploy_staging:
+      runs-on: [self-hosted, windows, x64]
+      if: ${{ contains(github.ref, '-beta') }}
+    
+      steps:
+        - name: Deploy staggin
+          run: echo Deployando a staggin
+
+    deploy_production:
+      runs-on: [self-hosted, windows, x64]
+      if: ${{ !contains(github.ref, '-beta') }}
+    
+      steps:
+        - name: Deploy Producction
+          run: echo Deployando a real
