@@ -2,6 +2,8 @@
 # dependiendo que la etiqueta contenga -beta o no hace el deploy 
 # a staggin o a producción
 
+name: ReleaseBeta
+
 on:
   release:
     types: [created]
