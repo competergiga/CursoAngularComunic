@@ -1,4 +1,4 @@
-name: SonarQube
+name: Sonar
 
 # Controls when the action will run. 
 on:
